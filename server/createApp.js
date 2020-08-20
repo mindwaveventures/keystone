@@ -24,7 +24,7 @@ module.exports = function createApp (keystone, express) {
 		res.header('X-Frame-Options', 'SAMEORIGIN');
 		res.header('X-XSS-Protection', '0');
 		res.header('Strict-Transport-Security', ' max-age=31536000');
-		res.setHeader("Content-Security-Policy", "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests");
+		//res.setHeader("Content-Security-Policy", "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests");
 		res.header('Feature-Policy', 'none');
 		res.removeHeader('X-Powered-By');
 		res.removeHeader('Server');
