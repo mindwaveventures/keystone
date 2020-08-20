@@ -15,6 +15,20 @@ module.exports = function createApp (keystone, express) {
 	}
 
 	var app = keystone.app;
+	
+	//Intialize the header for secuirty issues in keystone
+	app.use(function (req, res, next) {
+		res.header('X-Content-Type-Options', 'nosniff');
+    	res.header('Referrer-Policy', 'no-referrer');
+    	res.header('X-Permitted-Cross-Domain-Policies', 'none');
+		res.header('X-Frame-Options', 'SAMEORIGIN');
+		res.header('X-XSS-Protection', '0');
+		res.header('Strict-Transport-Security', ' max-age=31536000');
+		res.removeHeader('X-Powered-By');
+		res.removeHeader('Server');
+		next()
+	});
+	
 	require('./initLetsEncrypt')(keystone, app);
 	require('./initSslRedirect')(keystone, app);
 
