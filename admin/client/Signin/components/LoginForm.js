@@ -30,6 +30,7 @@ const LoginForm = ({
 						name="password"
 						onChange={handleInputChange}
 						value={password}
+			      autocomplete="off"
 					/>
 				</FormField>
 				<Button disabled={isAnimating} color="primary" type="submit">
