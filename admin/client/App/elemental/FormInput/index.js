@@ -48,6 +48,7 @@ class FormInput extends Component {
 		return (
 			<Tag
 				ref={setRef}
+			  autocomplete="off"
 				disabled={props.disabled}
 				{...props}
 			/>
